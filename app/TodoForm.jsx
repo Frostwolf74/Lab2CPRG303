@@ -1,28 +1,23 @@
 import React from "react";
-import {View, TextInput, StyleSheet} from "react-native";
+import {View, TextInput, StyleSheet, Button} from "react-native";
+// SafeAreaView (react-native) is deprecated
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TodoForm(){
-    <View style={styles.form}>
-        <TextInput
-          style={styles.input}
-          placeholder="Add a new task..."
-        />
-        <Button title="Add" />
-    </View>
+    return (
+        <SafeAreaView>
+            <View style={styles.form}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Add a new task..."
+                />
+                <Button title="Add" />
+            </View>
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
-  task: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
-  },
-  completed: {
-    backgroundColor: '#e0e0e0',
-  },
-  taskText: {
-    fontSize: 16,
-  },
   form: {
     flexDirection: 'row',
     justifyContent: 'space-between',
